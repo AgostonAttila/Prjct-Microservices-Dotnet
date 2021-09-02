@@ -1,0 +1,5 @@
+docker build -t atesz014/platformservice .    
+docker run -p 8080:80 -d atesz014/platformservice
+docker ps 
+docker stop <containerid>
+docker push atesz014/platformservice 

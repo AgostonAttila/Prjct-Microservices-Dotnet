@@ -3,3 +3,10 @@ docker run -p 8080:80 -d atesz014/platformservice
 docker ps 
 docker stop <containerid>
 docker push atesz014/platformservice 
+
+kubectl version
+kubectl apply -f platforms-depl.yaml
+kubectl get deployments
+kubectl get pods     
+kubectl delete deployment platforms-depl
+kubectl get services

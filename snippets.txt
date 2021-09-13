@@ -11,3 +11,29 @@ kubectl get pods
 kubectl delete deployment platforms-depl
 kubectl get services
 kubectl rollout restart deployment platforms-depl
+kubectl get namespace
+kubectl get deployment --namespace=ingress-nginx    
+kubectl get pods --namespace=ingress-nginx    
+kubectl get services --namespace=ingress-nginx    
+kubectl get storageclass
+
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/cloud/deploy.yaml
+
+c:\Windows\System32\drivers\etc\  127.0.0.1 acme.com
+
+
+From beggining:
+kubectl apply -f platforms-depl.yaml
+kubectl apply -f platforms-np-srv.yaml
+kubectl apply -f commands-depl.yaml
+------------------------------------------------------
+--> port number kubectl get services 
+NAME                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+commands-clusterip-srv    ClusterIP   10.108.206.50   <none>        80/TCP           8m11s
+kubernetes                ClusterIP   10.96.0.1       <none>        443/TCP          25h
+platformnpservice-srv     NodePort    10.103.62.56    <none>        80:31146/TCP     58s
+platforms-clusterip-srv   ClusterIP   10.109.251.99   <none>        80/TCP,666/TCP   9m8s
+------------------------------------------------------
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/cloud/deploy.yaml
+kubectl apply -f ingress-srv.yaml
